@@ -9,6 +9,7 @@ let artists = [
   {
     id: '1',
     name: 'Andres Koller',
+    urlName: 'andreskoller',
     biografia: 'Andres Koller es un DJ/Productor de la ciudad de Rosario - Argentina. A muy temprana edad comenzó a interiorizarse en la música electrónica en general.Su genero main es el Techno.Actualmente con 25 años logro presentarse en grandes fiestas de renombre de Argentina, Mexico, Estados Unidos y Chile, compartiendo cabina con varios referentes nacionales e internacionales tales como, Adam Beyer, Pan- Pot, Victor Ruiz, Nicolás Taboada, Beico, entre otros.Su etapa de producción musical comienza a principios del 2018, editando para grandes sellos como Made In Brussels, SK Recordings, Distance Music.Recibiendo varios supports de Dj\'s internacionales. Hoy dedica todo su tiempo a la música para mostrarle al publico su manera de crear un estilo único cuando se trata de crear un DJ set y también al crear nueva música con su propia marca.',
     urlImages: {
       img1: '../images/andres/andres-1.jpg',
@@ -25,6 +26,7 @@ let artists = [
   {
     id: '2',
     name: 'Geronimo Gonzalez',
+    urlName: 'geronimogonzalez',
     biografia: 'Nacido en la ciudad de Gualeguaychú - Entre ríos el 28 de septiembre de 1998 inicie en el mundo de la música en 2015, dedicándome por completo a la música electrónica en 2019. Pasando por varios estilos a lo largo de estos años me he decidido por los sonidos del minimal techno, techno y side trans. Tuve el placer de compartir cabina con grandes artistas como Camila Cheka, Guada Bonin, Luciano Vidal, Valentín Bianchi, Sebastián Carreras, Pinco, Nacho Scoppa, Marino, Marianelo, entre otros. Logrando así presentarme en clubes y fiestas como crobar(Bs As), dvne park(Bs As), PM(Concepción del Uruguay) Pakafter (Colon) entre otras.',
     urlImages: {
       img1: '../images/gero/gero-1.jpg',
@@ -41,6 +43,7 @@ let artists = [
   {
     id: '3',
     name: 'Facundo Asin',
+    urlName: 'facundoasin',
     biografia: 'Facundo Asin es un DJ nacido en Concepción del Uruguay - Entre ríos, un 17 de mayo del 2000. Su amor por la música electrónica desde pequeño lo llevó a involucrarse en el rubro desde sus 17 años, compartiendo y aprendiendo constantemente cómo mejorar. Inició en el mundo de la música electrónica tocando TechHouse, pero con el pasar del tiempo fue indagando y descubriendo cuál sería su identidad musical, lo que lo llevó a descubrir su gusto por el Techno. Actualmente sus sets se ven formados por mucho groove y melodías del House acompañadas con la fuerza y percusión del Techno. Sus presentaciones se vieron en fiestas y clubes como NightHouse(Colón), Post Brigado Crew(Concordia), TheRoom(Zero - Gualeguaychú), Pm(Concepción del Uruguay), TheRoom(Living - Gualeguaychú), Arcade(Concepción del Uruguay), SunsetPark(Colón), Post Sebastián Carreras(Gualeguaychú). Lo que lo llevó a compartir cabina con artistas como Agustín Recoba, Santiago Mostto, Marianelo, Gerónimo González, Fede Mattio, Joaquín Cossi, C Tabarezzi, Mariano Pr, Luciano Fredes, Marisol.Rk, Galarza, entre otros',
     urlImages: {},
     socialLinks: {
@@ -53,6 +56,7 @@ let artists = [
   {
     id: '4',
     name: 'Luciano Vidal',
+    urlName: 'lucianovidal',
     biografia: 'Luciano Gabriel Vidal es un DJ de 25 años nacido en la ciudad de Mar del Plata (B.A), viviendo desde su niñez en Concepción del Uruguay (E.R). Su carrera de DJ comenzó a la edad de 20 años cuando emigró a Uruguay y por su cuenta aprendió este arte. Con preferencias por generos como  Melodic House/ Techno, Minimal DeepTech, Progressive. Ha tocado en fiestas y clubes como: Crobrar Club(B.A), DunePark(B.A), La Rave(Punta del Diablo UY), Peca2(Córdoba), Look Me(Córdoba).Compartió cabina con Dj\'s como Martin Huergo, Car-los Ruiz, Juan Pryor, Ariel Rodz, Andrés Koller, Mosher, Dante Filcanavo, Guada Bonnin, Julio Binci, Fede Mattio, Marianelo, Marino, Haze (uy).Se puede ver su despliegue en cabina que se lo caracteriza porque su estilo es inmersivo y se inclina hacia sonidos melódicos profundos, con suaves percusiones resonantes que crean vibraciones edificantes e hipnóticas en la pista de baile.Con su peculiar personalidad logra llegar al público de una manera única.',
     urlImages: {
       img1: '../images/peke/peke-2.jpg',
@@ -69,6 +73,7 @@ let artists = [
   {
     id: '5',
     name: 'Gabriel Rojas',
+    urlName: 'gabrielrojas',
     biografia: 'Gabriel Rojas tiene 25 años y es oriundo de la ciudad de Concepción del Uruguay (E.R). A sus 18 años emigró hacia Capital Federal (B.A) donde se inició como Dj. Su preferencia por el House y habilidad a la hora de la mezcla, hacen que sus sets puedan contener varios géneros como Deep Tech, Progressive y Melodic.En los que busca bajos potentes, melodías finas y vocales que forman una cálida atmósfera en la pista de baile. Se ha presentado en distintos clubes y fiestas, como lo son Aurora(E.R), Forest(E.R) y La biblioteca(B.A).Compartiendo cabina con Dj´s como Zagitar, Luciano Vidal, Marino, Marianelo, entre otros.',
     urlImages: {
       img1: '../images/gabi/gabi-1.jpeg',
@@ -86,23 +91,56 @@ let artists = [
 
 let users = [
   {
-    'id': 1,
-    'fullName': 'Santiago Mostto',
-    'username': 'Santimostto',
-    'password': 'Santimostto',
-    'URLticket': 'url',
-    'numberTicket': 1,
+    id: 1,
+    fullName: 'Santiago Mostto',
+    username: 'Santimostto',
+    password: 'Santimostto',
+    URLticket: 'url',
+    numberTicket: 1,
   },
   {
-    'id': 2,
-    'fullName': 'Fran Pibu',
-    'username': 'Franpibu',
-    'password': 'Franpibu',
-    'URLticket': 'url',
-    'numberTicket': 2,
+    id: 2,
+    fullName: 'Fran Pibu',
+    username: 'Franpibu',
+    password: 'Franpibu',
+    URLticket: 'url',
+    numberTicket: 2,
   }
- 
+
 ]
+
+let tickets = [
+  {
+    nameTicket: 'Juan Oliver',
+    numberTicket: 44    
+  }
+]
+
+app.get('/api/tickets', (request, response) => {
+  response.json(tickets)
+})
+
+app.get('/api/tickets/:nameTicket', (request, response) => {
+  const nameTicket = request.params.nameTicket
+  const userTicket = tickets.find(ticket => ticket.nameTicket === nameTicket)
+  if (userTicket) {
+    response.json(userTicket)
+  } else {
+    response.status(404).end()
+  }
+})
+
+app.post('/api/tickets', (request, response) => {
+  const userTicket = request.body
+  const numbersTickets = tickets.map(ticket => ticket.numberTicket)
+  const maxNumberTicket = Math.max(...numbersTickets)
+  const newTicket = {
+    nameTicket : userTicket.nameTicket,
+    numberTicket: maxNumberTicket + 1,
+  }
+  tickets = [...tickets, newTicket]
+  response.json(newTicket)
+})
 
 app.get('/', (request, response) => {
   response.send('<h1>Hello World</h1>')
@@ -146,9 +184,9 @@ app.get('/api/artists', (request, response) => {
   response.json(artists)
 })
 
-app.get('/api/artists/:name', (request, response) => {
-  const artistName = request.params.name
-  const artist = artists.find(artist => artist.name === artistName)
+app.get('/api/artists/:urlName', (request, response) => {
+  const urlName = request.params.urlName
+  const artist = artists.find(artist => artist.urlName === urlName)
 
   if (artist) {
     response.json(artist)
