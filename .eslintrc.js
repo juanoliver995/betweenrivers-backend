@@ -12,6 +12,7 @@ module.exports = {
     'ecmaVersion': 'latest'
   },
   'rules': {
+    'no-unused-vars': 'off',
     'indent': [
       'error',
       2
@@ -27,6 +28,6 @@ module.exports = {
     'semi': [
       'error',
       'never'
-    ]
+    ],
   }
 }

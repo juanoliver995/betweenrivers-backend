@@ -2,7 +2,8 @@ const { Schema, model } = require('mongoose')
 
 const ticketSchema = new Schema({
   nameTicket: String,
-  numberTicket: Number
+  numberTicket: Number,
+  email: String
 })
 
 ticketSchema.set('toJSON', {

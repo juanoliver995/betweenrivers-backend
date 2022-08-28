@@ -6,14 +6,13 @@ const cors = require('cors')
 const Artist = require('./models/Artist')
 const User = require('./models/User')
 const Ticket = require('./models/Ticket')
-const notFound = require('./midelware/notFound')
-const handleErrors = require('./midelware/handleErrors')
-
-
+const PointsOfSale = require('./models/PointsOfSale')
+const notFound = require('./midelware/notFound.js')
+const handleErrors = require('./midelware/handleErrors.js')
+const ticketsRouter = require('./controllers/tickets')
+const loguinRouter = require('./controllers/loguin')
 app.use(express.json())
 app.use(cors())
-
-
 
 // Index API
 app.get('/', (request, response) => {
@@ -31,13 +30,12 @@ app.get('/api/artists/:id', (request, response, next) => {
   const { id } = request.params
   Artist.findById(id).then(artist => {
     if (artist) {
-      response.json(artist)
+      return response.json(artist)
     } else {
       response.status(404).end()
     }
-  }).catch(error => {
-    next(error)
   })
+    .catch(err => next(err))
 })
 
 //API Tickets
@@ -48,38 +46,21 @@ app.get('/api/tickets', (request, response) => {
 })
 
 app.get('/api/tickets/:id', (request, response, next) => {
-  const {id} = request.params
-  Ticket.find(id)
-    .then(tickets => {
-      if (tickets) {
-        response.json(tickets)
+  const { id } = request.params
+
+  Ticket.findById(id)
+    .then(ticket => {
+      if (ticket) {
+        response.json(ticket)
       } else {
         response.status(404).end()
       }
-    }).catch(err => {
-      next(err)
     })
+    .catch(error => next(error))
 
 })
 
-app.post('/api/tickets', (request, response) => {
-  const userTicket = request.body
-
-  if(!userTicket.nameTicket){
-    return response.status(400).json({
-      error: 'required "content" field is mising'
-    })
-  }
-
-  const newTicket = new Ticket ({
-    nameTicket : userTicket.nameTicket,
-    numberTicket: userTicket.numberTicket,
-  })
-
-  newTicket.save().then(savedTicket => {
-    response.json(savedTicket)
-  })
-})
+app.use('/api/tickets', ticketsRouter)
 
 // API Users
 app.get('/api/users', (request, response) => {
@@ -103,11 +84,18 @@ app.get('/api/users/:id', (request, response, next) => {
     })
 })
 
+app.use('/api/login', loguinRouter)
+
+// Point of Sale
+app.get('/api/points', (request, response) => {
+  PointsOfSale.find({}).then(points=>{
+    response.json(points)
+  })
+})
+
 app.use(notFound)
 
 app.use(handleErrors)
-
-
 
 const PORT = process.env.PORT
 app.listen(PORT, () => {

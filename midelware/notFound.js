@@ -1,5 +1,4 @@
-const notFound = (error, request, response) => {
+module.exports = ( request, response, next) => {
   response.status(404).end()
 }
 
-module.exports = notFound

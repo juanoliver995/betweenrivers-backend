@@ -4,6 +4,7 @@ const userSchema = new Schema({
   fullName: String,
   username: String,
   password: String,
+  URLticket: String,
   numberTicket: Number
 })
 
@@ -12,12 +13,10 @@ userSchema.set('toJSON', {
     returnedObjet.id = returnedObjet._id
     delete returnedObjet._id
     delete returnedObjet.__v
+    delete returnedObjet.password
   }
 })
 
 const User = model('User', userSchema)
-
-
-
 
 module.exports = User
