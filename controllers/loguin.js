@@ -3,7 +3,7 @@ const User = require('../models/User')
 
 loguinRouter.post('/', async (request, response) => {
   const { body } = request
-  const { username, password } = body
+  const { username, password } = await body
 
   const user = await User.findOne({username})
   const passwordCorrect = user === null
@@ -12,13 +12,15 @@ loguinRouter.post('/', async (request, response) => {
 
   if(!passwordCorrect){
     response.status(401).json({error: 'invalid user or password'})
+  } 
+  if(passwordCorrect){
+    response.send({
+      fullName: user.fullName,
+      numberTicket: user.numberTicket,
+      URLticket: user.URLticket
+    })
   }
-
-  response.send({
-    fullName: user.fullName,
-    numberTicket: user.numberTicket,
-    URLticket : user.URLticket
-  })
+ 
 })
 
 
